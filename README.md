@@ -8,7 +8,7 @@ This project uses version `1.63.0` of rust. To install the project, run the foll
 ```bash
 git clone https://github.com/isaacdonaldson/tps.git
 cd tps
-cargo install 
+cargo install --path .
 cargo run -- transactions.csv > output.csv
 ```
 
@@ -60,7 +60,7 @@ If a transaction fails (ex: client has insufficient funds for a withdrawal), the
 I assumed that disputes, resolutions, and chargebacks only occur on deposits. This is a reasonable assumption, as there is no clear way to handle these on other transaction types.
 
 ### Frozen Account Prevents Activity
-I assumed that a frozen account prevents anymore transactions from being processed on it. So all 5 transactions would be ignored for that account.
+I assumed that a frozen account prevents anymore transactions from being processed on it. So all 5 transaction types would be ignored for that account.
 
 ### Accounts can be created
 I assumed that on failed transactions, the account can still be created and it have no effect on the output as long as the transaction did not effect the account at all (i.e. Account exists but balances are all 0).
